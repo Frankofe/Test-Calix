@@ -1,1 +1,1 @@
-from . import sale_order, sales_channels
+from . import sale_order, sales_channels, account_move

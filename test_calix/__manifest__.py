@@ -12,7 +12,9 @@
         "security/ir.model.access.csv", 
         "views/sales_channels.xml",
         "views/sale_order.xml",
+        "views/account_move.xml",
         "data/sales_channels_sequence.xml",
+        
     ],
     "installable": True,
     "application": True,

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sales_channel_view_form" model="ir.ui.view">
+        <field name="name">SALES CHANNELS.view.form</field>
+        <field name="model">sales.channel</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="code" attrs="{ 'invisible': [('code','=',False)] }"/>
+                        <field name="deposit" />
+                        <field name="journal_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sales_channel_view_tree" model="ir.ui.view">
+        <field name="name">SALES CHANNELS.view.tree</field>
+        <field name="model">sales.channel</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" />
+                <field name="code" />
+                <field name="deposit" />
+                <field name="journal_id" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id="sales_channel_action" model="ir.actions.act_window">
+        <field name="name">Sales Channel</field>
+        <field name="res_model">sales.channel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="sales_channel_menu"
+        name="Sales Channel"
+        action="sales_channel_action"
+        parent="sale.menu_sale_general_settings"
+        sequence="10"/>
+</odoo>

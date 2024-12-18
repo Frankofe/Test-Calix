@@ -27,6 +27,9 @@
                         <field name="credit_global"/>
                         <field name="credit_used" readonly="1"/>
                         <field name="credit_available" readonly="1"/>
+                        <field name="res_partner_ids" invisible="1"/>
+                        <field name="sales_order_ids" invisible="1"/>
+                        <field name="account_move_ids" invisible="1"/>
                     </group>
                 </sheet>
             </form>

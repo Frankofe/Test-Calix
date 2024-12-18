@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="credit_group_test_calix" name="credit_group_report">
+        <t t-call="web.html_container"> 
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="font-family: 'Arial', sans-serif; color: #333;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h1 style="color: #007BFF; border-bottom: 2px solid #007BFF; display: inline-block; padding-bottom: 5px;">
+                            Credit Group Report
+                        </h1>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h2 style="color: #555;">Credit Group: <span style="color: #007BFF;"><t t-esc="doc.name"/></span></h2>
+                        <p><strong>Code:</strong> <t t-esc="doc.code"/></p>
+                        <p><strong>Sales Channel:</strong> <t t-esc="doc.sale_channel_id.name"/></p>
+                    </div>
+
+                    <!-- Partners Section -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="background: #007BFF; color: white; padding: 5px;">Partners</h3>
+                        <table class="table table-sm" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                            <thead style="background-color: #F8F9FA;">
+                                <tr style="border-bottom: 2px solid #007BFF;">
+                                    <th style="text-align: left; padding: 8px;">Name</th>
+                                    <th style="text-align: left; padding: 8px;">Document</th>
+                                    <th style="text-align: left; padding: 8px;">Phone</th>
+                                    <th style="text-align: left; padding: 8px;">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.res_partner_ids" t-as="partner">
+                                    <tr style="border-bottom: 1px solid #DDD;">
+                                        <td style="padding: 8px;"><t t-esc="partner.name" /></td>
+                                        <td style="padding: 8px;"><t t-esc="partner.vat" /></td>
+                                        <td style="padding: 8px;"><t t-esc="partner.phone" /></td>
+                                        <td style="padding: 8px;"><t t-esc="partner.email" /></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Sales Orders Section -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="background: #007BFF; color: white; padding: 5px;">Sales Orders</h3>
+                        <table class="table table-sm" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                            <thead style="background-color: #F8F9FA;">
+                                <tr style="border-bottom: 2px solid #007BFF;">
+                                    <th style="text-align: left; padding: 8px;">Order Reference</th>
+                                    <th style="text-align: left; padding: 8px;">Date Order</th>
+                                    <th style="text-align: right; padding: 8px;">Total Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.sales_order_ids" t-as="order">
+                                    <tr style="border-bottom: 1px solid #DDD;">
+                                        <td style="padding: 8px;"><t t-esc="order.name" /></td>
+                                        <td style="padding: 8px;"><t t-esc="order.date_order" /></td>
+                                        <td style="padding: 8px; text-align: right;"><t t-esc="order.amount_total" /></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Invoices Section -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="background: #007BFF; color: white; padding: 5px;">Invoices</h3>
+                        <table class="table table-sm" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                            <thead style="background-color: #F8F9FA;">
+                                <tr style="border-bottom: 2px solid #007BFF;">
+                                    <th style="text-align: left; padding: 8px;">Invoice Reference</th>
+                                    <th style="text-align: left; padding: 8px;">Date</th>
+                                    <th style="text-align: right; padding: 8px;">Amount Due</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.account_move_ids" t-as="invoice">
+                                    <tr style="border-bottom: 1px solid #DDD;">
+                                        <td style="padding: 8px;"><t t-esc="invoice.name" /></td>
+                                        <td style="padding: 8px;"><t t-esc="invoice.date" /></td>
+                                        <td style="padding: 8px; text-align: right;"><t t-esc="invoice.amount_residual" /></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="text-align: center; font-size: 12px; color: #888; margin-top: 20px;">
+                        <p>Generated by Credit Group System | © 2024</p>
+                    </div>
+                </div>
+            </t>        
+        </t>
+    </template>
+
+</odoo>
+

@@ -15,7 +15,9 @@
         "views/account_move.xml",
         "views/credit_group.xml",
         "views/res_partner.xml",
+        "report/credit_group_report.xml",
         "data/sales_channels_sequence.xml",
+        "data/ir_actions_reports.xml",
         
     ],
     "installable": True,

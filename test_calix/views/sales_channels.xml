@@ -36,11 +36,13 @@
         <field name="res_model">sales.channel</field>
         <field name="view_mode">tree,form</field>
     </record>
+    
+    <menuitem id="sales_channels_menu_root" name="Sales Channels" parent="sale.menu_sale_general_settings" sequence="10"/>
 
     <menuitem
         id="sales_channel_menu"
         name="Sales Channel"
         action="sales_channel_action"
-        parent="sale.menu_sale_general_settings"
+        parent="test_calix.sales_channels_menu_root"
         sequence="10"/>
 </odoo>

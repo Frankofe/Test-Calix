@@ -14,6 +14,7 @@
         "views/sale_order.xml",
         "views/account_move.xml",
         "views/credit_group.xml",
+        "views/res_partner.xml",
         "data/sales_channels_sequence.xml",
         
     ],

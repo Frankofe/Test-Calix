@@ -8,6 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='date_order']" position="after">
                 <field name="sales_channels_id" required="1" />
+                <field name="credit_control" invisible="1"/>
+                <field name="credit_type" widget="badge" decoration-success="credit_type == 'available_credit'" decoration-danger="credit_type == 'blocked_credit'" decoration-muted="credit_type == 'no_limit'"/>
             </xpath>
         </field>
     </record>
@@ -19,6 +21,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="sales_channels_id" />
+                <field name="credit_type" widget="badge" decoration-success="credit_type == 'available_credit'" decoration-danger="credit_type == 'blocked_credit'" decoration-muted="credit_type == 'no_limit'"/>
             </xpath>
         </field>
     </record>

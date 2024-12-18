@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_test_calix_form" model="ir.ui.view">
+        <field name="name">RES PARTNER FORM</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="credit_control" />
+                <field name="credit_group_ids" widget="many2many_tags" attrs="{ 'invisible': [('credit_control', '=', False)], 'required': [('credit_control', '=', True)] }"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
